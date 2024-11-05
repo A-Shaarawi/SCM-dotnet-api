@@ -13,7 +13,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: Lab1/Dockerfile
+      dockerfile: Dockerfile
     depends_on:
       - sqlserver
     environment:   
