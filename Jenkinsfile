@@ -4,21 +4,24 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh 'dotnet build Lab1.sln' // Replace with your actual solution name, e.g., Lab1.sln
+          // Use your actual solution file name
+          bat 'dotnet build Lab1.sln'
         }
       }
     }
     stage('Docker Build') {
       steps {
         script {
-          sh 'docker build -t lab1-api .' // Replace with your desired Docker image name
+          // Build the Docker image with the specified image name
+          bat 'docker build -t lab1-api .'
         }
       }
     }
     stage('Deploy to Staging') {
       steps {
         script {
-          sh 'docker-compose up --build -d' // Ensure docker-compose.yml is correctly configured
+          // Deploy the image using docker-compose
+          bat 'docker-compose up --build -d'
         }
       }
     }
