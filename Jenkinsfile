@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'dotnet build YourApiProjectName.sln'
+                    bat 'dotnet build SCM-dotnet-api.sln'
                 }
             }
         }
