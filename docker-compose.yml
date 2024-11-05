@@ -20,6 +20,6 @@ services:
       ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=AdventureWorks;User Id=sa;Password=YourStrong@Passw0rd;"
      
     ports:
-      - "8080:80"
+      - "8081:80"
     image: lab1-api  # Replace with the same image name used in Docker Build stage
 
