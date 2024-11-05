@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Boudy1234"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  api:
+    build:
+      context: .
+      dockerfile: Lab1/Dockerfile
+    depends_on:
+      - sqlserver
+    environment:   
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=AdventureWorks;User Id=sa;Password=YourStrong@Passw0rd;"
+     
+    ports:
+      - "8080:80"
+    image: lab1-api  # Replace with the same image name used in Docker Build stage
+
